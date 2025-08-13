@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Create an account on Motor-X">
+    <meta name="author" content="Motor-X">
+
+    <title>The Mudpot - Create Account</title>
+
+    <!-- Fonts and Icons -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,800,900" rel="stylesheet">
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+    <!-- External Scripts -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <style>
+       body {
+            background: url('img/Register-banner.png') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .custom-card {
+            max-width: 850px; /* Reduces the card's width */
+            margin: 0 auto; /* Centers the card horizontally */
+            background: rgba(255, 255, 255, 0.8); /* Adds transparency */
+            border-radius: 15px; /* Slightly round corners */
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Adds depth */
+        }
+
+        .custom-button-class {
+            background-color: #FF5733;
+            color: white;
+            border: none;
+        }
+
+        .custom-button-class:hover {
+            background-color: #C70039;
+            color: white;
+        }
+
+        .form-control-user {
+            border-radius: 25px;
+        }
+
+
+        .custom-button-class {
+            background-color: #FF5733;
+            color: white;
+            border: none;
+        }
+
+        .custom-button-class:hover {
+            background-color: #C70039;
+            color: white;
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo-container img {
+            max-width: 350px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-control-user {
+            border-radius: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card o-hidden border-0 shadow-lg my-5 custom-card">
+            <div class="text-center mt-5">
+                <h1 class="h4 text-gray-800 mb-4">For an Authentic Sri Lankan Cuisine</h1>
+            </div>
+            <div class="card-body p-0">
+                <div class="row">
+                    <div class="col-lg-5 d-none d-lg-block logo-container">
+                        <img src="img/logo.png" alt="Registration Illustration" class="img-fluid">
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="p-5">
+                            <form class="user" id="registrationForm">
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <input type="text" class="form-control form-control-user" id="fname" placeholder="First Name" required>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control form-control-user" id="lname" placeholder="Last Name" required>
+                                    </div>
+                                </div>
+                        
+                                <div class="form-group">
+                                    <input type="email" class="form-control form-control-user" id="email" placeholder="Email Address" required>
+                                </div>
+                        
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <input type="text" class="form-control form-control-user" id="username" placeholder="User Name" required>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control form-control-user" id="contact" placeholder="Contact Number" required>
+                                    </div>
+                                </div>
+                        
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <input type="password" class="form-control form-control-user" id="pass" placeholder="Password" required>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="password" class="form-control form-control-user" id="con" placeholder="Confirm Password" required>
+                                    </div>
+                                </div>
+                        
+                                <button type="submit" class="custom-button-class btn btn-user btn-block">Register</button>
+                            </form>
+                            <hr>
+                            <div class="text-center">
+                                <a class="small" href="login.html">Already have an account? Login!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="js/sb-admin-2.min.js"></script>
+    <script src="js/authentication.js"></script>
+</body>
+
+
+</html>
