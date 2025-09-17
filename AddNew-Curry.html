@@ -19,7 +19,7 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <script src="js/jquery-3.6.1.min.js"></script>
-    <script src="js/MenuItem.js"></script>
+    <script src="js/CurryItem.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
 
 
@@ -31,7 +31,7 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
         <!-- Sidebar -->
-          <ul class="navbar-nav bg-success sidebar sidebar-dark accordion " id="accordionSidebar">
+         <ul class="navbar-nav bg-success sidebar sidebar-dark accordion " id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
@@ -217,154 +217,85 @@
 
                 </nav>
                 <div class="container-fluid">
+                    <div class="container-fluid">
                     <div class="card o-hidden border-0 shadow-lg">
                         <div class="text-center">
-                            <h1 class="h3 text-gray-700 mt-5">Restaurant Management System</h1>
+                        <h1 class="h3 text-gray-700 mt-5">Restaurant Management System</h1>
                         </div>
+
                         <div class="card-body p-0">
-                            <h3 class="h4 text-gray-700 mt-5 ml-5">Add New Menu Item</h3>
-                            <div class="row">  
+                        <h3 class="h4 text-gray-700 mt-5 ml-5">Add New Curry Item</h3>
 
-                                <!-- Image Upload Section -->
-                                <div class="col-lg-5 ml-5 border-right">
-                                    <div class="mt-5">
-                                        <div class="form-group">
-                                            <label for="menuImage" class="input-label">Select Item Image</label>
-                                            <input type="file" class="form-control-file" id="menuImage" accept="image/*" onchange="previewImage()">
-                                        </div>
+                        <div class="row">
+                            <!-- Image upload + preview -->
+                            <div class="col-lg-5 ml-5 border-right">
+                            <div class="mt-5">
+                                <div class="form-group">
+                                <label for="curryImage" class="input-label">Select Curry Image</label>
+                                <input type="file" class="form-control-file" id="curryImage" accept="image/*" onchange="previewImage()">
+                                </div>
+                                <div class="form-group">
+                                <label for="imagePreview" class="input-label">Image Preview</label>
+                                <img id="imagePreview" src="#" alt="Image Preview" style="display:none;width:100%;height:auto;">
+                                </div>
+                                <small class="text-muted d-block">
+                                The selected image will be uploaded with this curry item.
+                                </small>
+                            </div>
+                            </div>
 
-                                        <!-- Image Preview -->
-                                        <div class="form-group">
-                                            <label for="imagePreview" class="input-label">Image Preview</label>
-                                            <img id="imagePreview" src="#" alt="Image Preview" style="display: none; width: 100%; height: auto;">
-                                        </div>
+                            <!-- Form fields -->
+                            <div class="col-lg-6">
+                            <div class="p-5">
+                                <div class="user" id="curryItemContainer">
+
+                                <!-- Curry Name -->
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-user" id="curryName" placeholder="Curry Name" required />
+                                </div>
+
+                                <!-- Price -->
+                                <div class="form-group">
+                                    <input type="number" step="0.01" class="form-control form-control-user" id="curryPrice" placeholder="Price (e.g., 990.00)" required />
+                                </div>
+
+                                <!-- Description -->
+                                <div class="form-group">
+                                    <textarea class="form-control form-control-user" id="curryDescription" placeholder="Description" rows="3" required></textarea>
+                                </div>
+
+                                <!-- Availability -->
+                                <div class="form-group">
+                                    <label for="availability" class="input-label">Availability</label>
+                                    <select class="form-control form-control-user" id="availability" required>
+                                    <option value="AVAILABLE" selected>Available</option>
+                                    <option value="OUT_OF_STOCK">Out of Stock</option>
+                                    <option value="SEASONAL">Seasonal</option>
+                                    <option value="DISCONTINUED">Discontinued</option>
+                                    </select>
+                                </div>
+
+                                <!-- Buttons -->
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <button type="button" class="btn btn-warning btn-user btn-block" onclick="resetFields()">Reset</button>
+                                    </div>
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <button type="button" class="btn btn-success btn-user btn-block" onclick="saveCurryItem()">Save Curry Item</button>
                                     </div>
                                 </div>
 
-                                <!-- Form Fields Section -->
-                                <div class="col-lg-6">
-                                    <div class="p-5">
-                                        <div class="user" id="menuItemContainer">
-
-                                            <!-- Item Name -->
-                                            <div class="form-group">
-                                                <input type="text" class="form-control form-control-user" id="itemName" placeholder="Item Name" required />
-                                            </div>
-
-                                            <!-- SKU -->
-                                            <div class="form-group">
-                                                <input type="text" class="form-control form-control-user" id="sku" placeholder="SKU (optional)" />
-                                            </div>
-
-                                            <!-- Category -->
-                                            <div class="form-group">
-                                                <label for="itemCategory" class="input-label">Category</label>
-                                                <select class="form-control form-control-user" id="itemCategory" required>
-                                                    <option value="" selected disabled>Select Category</option>
-                                                    <option value="APPETIZER">Appetizer</option>
-                                                    <option value="MAIN_COURSE">Main Course</option>
-                                                    <option value="DESSERT">Dessert</option>
-                                                    <option value="BEVERAGE">Beverage</option>
-                                                    <option value="SIDE">Side</option>
-                                                    <option value="SPECIAL">Special</option>
-                                                </select>
-                                            </div>
-
-                                            <!-- Price -->
-                                            <div class="form-group">
-                                                <input type="number" step="0.01" class="form-control form-control-user" id="itemPrice" placeholder="Price" required />
-                                            </div>
-
-                                            <!-- Currency -->
-                                            <div class="form-group">
-                                                <input type="text" class="form-control form-control-user" id="currency" placeholder="Currency (e.g., USD, LKR)" maxlength="3" />
-                                            </div>
-
-                                            <!-- Description -->
-                                            <div class="form-group">
-                                                <textarea class="form-control form-control-user" id="itemDescription" placeholder="Description" rows="3" required></textarea>
-                                            </div>
-
-                                            <!-- Availability -->
-                                            <div class="form-group">
-                                                <label for="availability" class="input-label">Availability</label>
-                                                <select class="form-control form-control-user" id="availability">
-                                                    <option value="AVAILABLE">Available</option>
-                                                    <option value="OUT_OF_STOCK">Out of Stock</option>
-                                                    <option value="SEASONAL">Seasonal</option>
-                                                    <option value="DISCONTINUED">Discontinued</option>
-                                                </select>
-                                            </div>
-
-                                            <!-- Dietary Flags -->
-                                            <div class="form-group">
-                                                <label>Dietary Options:</label><br>
-                                                <input type="checkbox" id="vegetarian"> Vegetarian
-                                                <input type="checkbox" id="vegan" class="ml-3"> Vegan
-                                                <input type="checkbox" id="glutenFree" class="ml-3"> Gluten-Free
-                                                <input type="checkbox" id="lactoseFree" class="ml-3"> Lactose-Free
-                                            </div>
-
-                                            <!-- Spicy Level -->
-                                            <div class="form-group">
-                                                <label for="spicyLevel">Spicy Level (0–5)</label>
-                                                <input type="number" id="spicyLevel" class="form-control form-control-user" min="0" max="5" />
-                                            </div>
-
-                                            <!-- Calories -->
-                                            <div class="form-group">
-                                                <input type="number" id="calories" class="form-control form-control-user" placeholder="Calories" />
-                                            </div>
-
-                                            <!-- Prep Time -->
-                                            <div class="form-group">
-                                                <input type="number" id="prepTimeMinutes" class="form-control form-control-user" placeholder="Prep Time (minutes)" />
-                                            </div>
-
-                                            <!-- Tags -->
-                                            <div class="form-group">
-                                                <input type="text" id="tags" class="form-control form-control-user" placeholder="Tags (comma separated)" />
-                                            </div>
-
-                                            <!-- Buttons -->
-                                            <div class="form-group row">
-                                                <div class="col-sm-6 mb-3 mb-sm-0">
-                                                    <button type="button" class="btn btn-warning btn-user btn-block" onclick="resetFields()">Reset</button>
-                                                </div>
-                                                <div class="col-sm-6 mb-3 mb-sm-0">
-                                                    <button type="button" class="btn btn-success btn-user btn-block" onclick="saveMenuItem()">Submit</button>
-                                                </div>
-                                            </div>
-
-                                        </div>                             
-                                    </div>
                                 </div>
                             </div>
+                            </div>
+
+                        </div>
                         </div>
                     </div>
-                </div>
+                    </div>
 
-                
-                <script>
-                    // Image Preview Function
-                    function previewImage() {
-                        const file = document.getElementById('menuImage').files[0];
-                        const preview = document.getElementById('imagePreview');
-                        if (file) {
-                            preview.src = URL.createObjectURL(file);
-                            preview.style.display = 'block';
-                        }
-                    }
 
-                    function resetFields() {
-                        document.getElementById('menuItemContainer').reset();
-                        document.getElementById('imagePreview').style.display = 'none';
-                    }
-
-                </script>
-                
-                
-
+            
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">

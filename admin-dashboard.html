@@ -18,6 +18,7 @@
         rel="stylesheet">
         <!-- External Scripts -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
    
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
@@ -25,6 +26,8 @@
 
     <script src="js/jquery-3.6.1.min.js"></script>
     <script type="text/javascript" src="js/chart.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script src="js/Statistic.js"></script> 
 
 </head>
 
@@ -68,12 +71,13 @@
                 <a class="nav-link collapsed text-white-900" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fa fa-address-card text-white" ></i>
-                    <span>Menue Item</span>
+                    <span>Menue Items</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header text-gray-900">add new item</h6>
-                        <a class="collapse-item" href="AddNew.html">New</a>
+                        <h6 class="collapse-header text-gray-900">Mange Items:</h6>
+                        <a class="collapse-item admin-only d-none" href="AddNew.html">New</a>
+                        <a class="collapse-item" href="MenuView.html">View</a>
                     </div>
                 </div>
             </li>
@@ -83,13 +87,14 @@
                 <a class="nav-link collapsed text-white-900" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fa fa-exclamation-circle text-white"></i>
-                    <span>Current Menu Item</span>
+                    <span>Curry Items</span>
                 </a>
                 <div id="collapseUtilities" class="collapse text-gray-900" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header text-gray-900">View Item:</h6>
-                        <a class="collapse-item" href="MenuView.html">View</a>
+                        <h6 class="collapse-header text-gray-900">Manage Item:</h6>
+                        <a class="collapse-item admin-only d-none" href="AddNew-Curry.html">New</a>
+                        <a class="collapse-item" href="CurryItemView.html">View</a>
                     </div>
                 </div>
             </li>
@@ -294,7 +299,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <canvas id="menuItemChart"></canvas>
-                          </div>                          
+                          </div>                        
                         <div class="col-md-6">
                           <!-- Description -->
                           <div class="card shadow mb-12">

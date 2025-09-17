@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>The Mudpot — Cart</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Fonts & Icons -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900" rel="stylesheet">
+
+  <!-- SweetAlert -->
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+  <!-- Theme -->
+  <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+  <!-- jQuery (theme’s) -->
+  <script src="js/jquery-3.6.1.min.js"></script>
+
+  <script src="js/main.js"></script>
+
+</head>
+
+<body id="page-top">
+<div id="wrapper">
+
+  <!-- Sidebar (trimmed to match your style) -->
+   <ul class="navbar-nav bg-success sidebar sidebar-dark accordion " id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                   
+                </div>
+                <div class="sidebar-brand-text mx-3 text-white-900"> THE MUDPOT </div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0 ">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active ">
+                <a class="nav-link text-white-900" href="index.html">
+                    <i class="fa fa-home text-white-900"></i>
+                    <span >Dashboard</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading text-white">
+                Manage
+            </div>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed text-white-900" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fa fa-address-card text-white" ></i>
+                    <span>Menue Items</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header text-gray-900">Mange Items:</h6>
+                        <a class="collapse-item admin-only d-none" href="AddNew.html">New</a>
+                        <a class="collapse-item" href="MenuView.html">View</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Utilities Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed text-white-900" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                    aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fa fa-exclamation-circle text-white"></i>
+                    <span>Curry Items</span>
+                </a>
+                <div id="collapseUtilities" class="collapse text-gray-900" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header text-gray-900">Manage Item:</h6>
+                        <a class="collapse-item admin-only d-none" href="AddNew-Curry.html">New</a>
+                        <a class="collapse-item" href="CurryItemView.html">View</a>
+                    </div>
+                </div>
+            </li>
+
+           
+            <li class="nav-item">
+                <a class="nav-link collapsed text-white-900" href="#" data-toggle="collapse" data-target="#collapseTwo3"
+                    aria-expanded="true" aria-controls="collapseTwo3">
+                    <i class="fa fa-wrench text-white"></i>
+                    <span>Setting</span>
+                </a>
+                <div id="collapseTwo3" class="collapse text-gray-900" aria-labelledby="headingTwo2" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header text-gray-900">Manage Setting:</h6>
+                        <a class="collapse-item" href="#">Setting</a>
+                    </div>
+                </div>
+            </li>
+
+
+            <li class="nav-item text-white-900">
+                <a class="nav-link text-white" href="#">
+                   
+
+                    <i class="fa fa-user text-white"></i>
+                    <span>Profile</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading text-white">
+               Genarate Reports
+            </div>
+
+
+
+            <li class="nav-item">
+                <a class="nav-link collapsed text-white-900" href="#" data-toggle="collapse" data-target="#collapseTwo4"
+                    aria-expanded="true" aria-controls="collapseTwo4">
+                    <i class="fa fa-file text-white"></i>
+                    <span>Report</span>
+                </a>
+                <div id="collapseTwo3" class="collapse text-gray-900" aria-labelledby="headingTwo2" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header text-gray-900">Genarate Report</h6>
+                        <a class="collapse-item" href="#">View</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block ">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline text-gray-900">
+                <button class="rounded-circle border-0 " id="sidebarToggle"></button>
+            </div>
+
+
+        </ul>
+
+          <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+              <!-- Topbar -->
+              <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <!-- Topbar Navbar-->
+                    <ul class="navbar-nav ml-auto">
+                        <li id="cartNavItem" class="nav-item dropdown no-arrow mx-1 d-none">
+                        <a class="nav-link position-relative" href="cart.html" id="cartLink" title="Cart">
+                            <i class="fas fa-shopping-cart fa-fw"></i>
+                            <span id="cart-count-badge" class="badge badge-danger badge-counter d-none">0</span>
+                        </a>
+                        </li>
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <script>
+                                    $(document).ready(function() {
+                                        // fetcgData();
+                                        var username = localStorage.getItem('username');
+                                        if (username) {
+                                            $('#fname').text(username);
+                                        } else {
+                                            $('#fname').text('Guest'); 
+                                        }
+                                    });
+                                </script>
+                                
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small" id="fname">Admin1</span>
+                                
+                                <img class="img-profile rounded-circle"
+                                    src="img/undraw_profile.svg">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Profile
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Settings
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Activity Log
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+      <!-- Page Content -->
+      <div class="container-fluid">
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+          <h1 class="h3 mb-0 text-gray-800">My Cart</h1>
+          <div>
+            <a href="CurryItemView.html" class="btn btn-link">← Continue Shopping</a>
+            <button id="btn-clear" class="btn btn-outline-danger">Clear Cart</button>
+          </div>
+        </div>
+
+        <div class="row">
+          <!-- Cart table -->
+          <div class="col-lg-8 mb-4">
+            <div class="card shadow border-0">
+              <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Items</h5>
+              </div>
+              <div class="card-body" id="cart-body">
+                <!-- Filled by JS -->
+                <div class="text-center text-muted py-5"><em>Loading cart…</em></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Summary -->
+          <div class="col-lg-4">
+            <div class="card shadow border-0">
+              <div class="card-header bg-white"><h5 class="mb-0">Summary</h5></div>
+              <div class="card-body">
+                <div class="d-flex justify-content-between mb-2">
+                  <span>Subtotal</span>
+                  <strong id="sum-subtotal">Rs. 0.00</strong>
+                </div>
+                <div class="d-flex justify-content-between mb-2">
+                  <span>Delivery</span>
+                  <strong id="sum-delivery">Rs. 0.00</strong>
+                </div>
+                <div class="d-flex justify-content-between mb-3">
+                  <span>Tax</span>
+                  <strong id="sum-tax">Rs. 0.00</strong>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <span class="h5 mb-0">Total</span>
+                  <span class="h5 mb-0" id="sum-total">Rs. 0.00</span>
+                </div>
+                <button id="btn-checkout" class="btn btn-success btn-block mt-4">Go to Checkout</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- /.container-fluid -->
+
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>The-Mudpot - Home Away From Home</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+</div>
+
+<!-- Logout Modal -->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document"><div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="logoutTitle">Confirm Logout</h5>
+      <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="modal-body">Are you sure you want to logout?</div>
+    <div class="modal-footer">
+      <button class="btn btn-warning" type="button" data-dismiss="modal">Cancel</button>
+      <a class="btn btn-danger" href="login.html" onclick="localStorage.clear()">Logout</a>
+    </div>
+  </div></div>
+</div>
+
+<!-- Theme scripts -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="js/sb-admin-2.min.js"></script>
+
+<!-- CART PAGE SCRIPT -->
+<script>
+  // ======= CONFIG =======
+  const API_BASE = window.API_BASE || "http://localhost:8080";
+  const JWT_KEY  = "jwtToken";
+
+  // ======= AUTH HELPERS (role=user only) =======
+  function parseJwt(token) {
+    try {
+      const base64Url = token.split('.')[1];
+      const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+      const json = decodeURIComponent(atob(base64).split('').map(c => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2)).join(''));
+      return JSON.parse(json);
+    } catch { return null; }
+  }
+  function isExpired(payload) {
+    if (!payload || !payload.exp) return false;
+    return Math.floor(Date.now() / 1000) >= payload.exp;
+  }
+  function getToken() {
+    const t = localStorage.getItem(JWT_KEY);
+    if (!t) return null;
+    const p = parseJwt(t);
+    if (!p || isExpired(p)) return null;
+    return t;
+  }
+  function isUserRole() {
+    const t = getToken();
+    if (!t) return false;
+    const p = parseJwt(t);
+    return String(p.role || '').toLowerCase() === 'user';
+  }
+  function authHeaders() {
+    const t = getToken();
+    return t ? { "Authorization": `Bearer ${t}` } : {};
+  }
+
+  // ======= UI HELPERS =======
+  function escapeHtml(str) {
+    return String(str || '').replace(/[&<>"']/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[s]));
+  }
+  function resolveImageUrl(imageUrl) {
+    if (!imageUrl) return 'https://via.placeholder.com/120x90?text=No+Image';
+    if (imageUrl.startsWith('/')) return `${API_BASE}${imageUrl}`;
+    if (imageUrl.startsWith('http')) return imageUrl;
+    if (imageUrl.startsWith('uploads/')) return `${API_BASE}/${imageUrl}`;
+    return imageUrl;
+  }
+  function toastOK(msg){ if (typeof swal==="function") swal({text:msg,icon:"success",button:"OK"}); else alert(msg); }
+  function toastWarn(msg){ if (typeof swal==="function") swal({text:msg,icon:"warning",button:"OK"}); else alert(msg); }
+  function toastErr(msg){ if (typeof swal==="function") swal({text:msg,icon:"error",button:"OK"}); else alert(msg); }
+
+  // ======= SERVER CART API =======
+  async function apiGetCart() {
+    const resp = await fetch(`${API_BASE}/api/cart`, { headers: authHeaders() });
+    if (!resp.ok) throw new Error("Failed to fetch cart");
+    return resp.json(); // CartDTO
+  }
+  async function apiSetQty(curryItemId, quantity) {
+    const resp = await fetch(`${API_BASE}/api/cart/items/${encodeURIComponent(curryItemId)}`, {
+      method: "PUT",
+      headers: { ...authHeaders(), "Content-Type": "application/json" },
+      body: JSON.stringify({ quantity })
+    });
+    if (!resp.ok) throw new Error("Failed to update quantity");
+    return resp.json();
+  }
+  async function apiRemoveItem(curryItemId) {
+    const resp = await fetch(`${API_BASE}/api/cart/items/${encodeURIComponent(curryItemId)}`, {
+      method: "DELETE",
+      headers: authHeaders()
+    });
+    if (!resp.ok && resp.status !== 204) throw new Error("Failed to remove item");
+  }
+  async function apiClearCart() {
+    const resp = await fetch(`${API_BASE}/api/cart`, { method: "DELETE", headers: authHeaders() });
+    if (!resp.ok && resp.status !== 204) throw new Error("Failed to clear cart");
+  }
+
+  // ======= RENDER =======
+  async function renderCart() {
+    const body = document.getElementById("cart-body");
+    if (!isUserRole()) {
+      body.innerHTML = `<div class="text-center text-muted py-5"><em>Please log in as a user to view the cart.</em></div>`;
+      const li = document.getElementById("cartNavItem"); if (li) li.classList.add("d-none");
+      return;
+    }
+
+    let cart;
+    try {
+      cart = await apiGetCart();
+    } catch (e) {
+      console.error(e);
+      body.innerHTML = `<div class="text-center text-muted py-5"><em>Failed to load cart.</em></div>`;
+      return;
+    }
+
+    const items = Array.isArray(cart?.items) ? cart.items : [];
+    if (items.length === 0) {
+      body.innerHTML = `<div class="text-center text-muted py-5"><em>Your cart is empty.</em></div>`;
+      updateSummary(0,0,0);
+      if (typeof updateCartBadge === 'function') updateCartBadge();
+      return;
+    }
+
+    let subtotal = 0;
+    const rows = items.map(it => {
+      const id   = it.curryItemId;
+      const name = it.name || "Untitled";
+      const qty  = parseInt(it.quantity || 0, 10) || 0;
+      const unit = Number(it.price || 0);
+      const line = unit * qty;
+      subtotal += line;
+
+      const unavailable = String(it.availability || '').toUpperCase() === 'DISCONTINUED'
+                       || String(it.availability || '').toUpperCase() === 'OUT_OF_STOCK';
+
+      return `
+        <tr>
+          <td style="width:90px">
+            <img src="${resolveImageUrl(it.imageUrl)}" alt="img" style="width:90px;height:65px;object-fit:cover;border-radius:6px;">
+          </td>
+          <td>
+            <div class="font-weight-bold">${escapeHtml(name)}</div>
+            <div class="text-muted small">${unavailable ? 'Unavailable' : ''}</div>
+          </td>
+          <td style="width:150px">
+            <div class="input-group input-group-sm">
+              <div class="input-group-prepend">
+                <button class="btn btn-outline-secondary" ${unavailable?'disabled':''} onclick="qtyMinus('${id}')">–</button>
+              </div>
+              <input id="qty-${id}" type="number" min="1" class="form-control text-center" value="${qty}"
+                     onchange="qtyChange('${id}', this.value)" ${unavailable?'disabled':''}>
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary" ${unavailable?'disabled':''} onclick="qtyPlus('${id}')">+</button>
+              </div>
+            </div>
+          </td>
+          <td class="text-right" style="width:120px">Rs. ${unit.toFixed(2)}</td>
+          <td class="text-right" style="width:130px"><strong>Rs. ${line.toFixed(2)}</strong></td>
+          <td style="width:70px" class="text-right">
+            <button class="btn btn-sm btn-outline-danger" onclick="removeLine('${id}', '${escapeHtml(name)}')">✕</button>
+          </td>
+        </tr>
+      `;
+    }).join('');
+
+    body.innerHTML = `
+      <div class="table-responsive">
+        <table class="table table-borderless align-middle mb-0">
+          <thead>
+            <tr>
+              <th></th><th>Item</th><th style="width:150px">Qty</th>
+              <th class="text-right">Unit</th><th class="text-right">Total</th><th></th>
+            </tr>
+          </thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>
+    `;
+
+    // delivery & tax are 0 (matches backend defaults you set)
+    updateSummary(subtotal, 0, 0);
+
+    // update navbar badge
+    if (typeof updateCartBadge === 'function') updateCartBadge();
+  }
+
+  function updateSummary(subtotal, delivery, tax) {
+    const total = Number(subtotal) + Number(delivery) + Number(tax);
+    document.getElementById("sum-subtotal").innerText = `Rs. ${Number(subtotal).toFixed(2)}`;
+    document.getElementById("sum-delivery").innerText = `Rs. ${Number(delivery).toFixed(2)}`;
+    document.getElementById("sum-tax").innerText = `Rs. ${Number(tax).toFixed(2)}`;
+    document.getElementById("sum-total").innerText = `Rs. ${Number(total).toFixed(2)}`;
+  }
+
+  // ======= HANDLERS =======
+  async function qtyMinus(id) {
+    const input = document.getElementById(`qty-${id}`);
+    const newQty = Math.max(1, (parseInt(input.value, 10) || 1) - 1);
+    await changeQty(id, newQty);
+  }
+  async function qtyPlus(id) {
+    const input = document.getElementById(`qty-${id}`);
+    const newQty = (parseInt(input.value, 10) || 1) + 1;
+    await changeQty(id, newQty);
+  }
+  async function qtyChange(id, val) {
+    const q = Math.max(1, parseInt(val, 10) || 1);
+    await changeQty(id, q);
+  }
+  async function changeQty(id, q) {
+    try {
+      await apiSetQty(id, q);
+      await renderCart();
+    } catch (e) {
+      console.error(e);
+      toastErr("Failed to update quantity.");
+    }
+  }
+  async function removeLine(id, name) {
+    try {
+      if (typeof swal === "function") {
+        const ok = await swal({ title: "Remove item?", text: name || "", icon: "warning", buttons: ["Cancel", "Remove"], dangerMode: true });
+        if (!ok) return;
+      } else if (!confirm("Remove this item?")) return;
+
+      await apiRemoveItem(id);
+      await renderCart();
+      toastOK("Item removed.");
+    } catch (e) {
+      console.error(e);
+      toastErr("Failed to remove item.");
+    }
+  }
+
+  // Buttons
+  document.getElementById("btn-clear").addEventListener("click", async () => {
+    try {
+      if (typeof swal === "function") {
+        const ok = await swal({ title: "Clear cart?", text: "All items will be removed.", icon: "warning", buttons: ["Cancel", "Clear"], dangerMode: true });
+        if (!ok) return;
+      } else if (!confirm("Clear entire cart?")) return;
+
+      await apiClearCart();
+      await renderCart();
+      toastOK("Cart cleared.");
+    } catch (e) {
+      console.error(e);
+      toastErr("Failed to clear cart.");
+    }
+  });
+
+  document.getElementById("btn-checkout").addEventListener("click", () => {
+    window.location.href = "checkout.html";
+  });
+
+  // Init
+  document.addEventListener("DOMContentLoaded", () => {
+    const u = localStorage.getItem("username");
+    if (u) document.getElementById("fname").innerText = u;
+    renderCart();
+    // ensure navbar badge draws
+    if (typeof updateCartBadge === 'function') updateCartBadge();
+  });
+</script>
+</body>
+</html>
